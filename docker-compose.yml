@@ -1,0 +1,27 @@
+version: '3.8'
+services:
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: mnist_logs
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  model:
+    build: ./model_service
+    depends_on: [db]
+    ports:
+      - "8000:8000"
+
+  web:
+    build: ./streamlit_app
+    depends_on: [model, db]
+    ports:
+      - "8501:8501"
+
+volumes:
+  db_data:
