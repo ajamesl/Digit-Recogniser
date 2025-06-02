@@ -1,5 +1,3 @@
-# Digit-Recogniser
-
-MNIST digit recogniser.
+# Digit Recogniser
 
 Building, containerising, and deploying a simple digit recogniser trained on the MNIST dataset.
