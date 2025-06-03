@@ -10,9 +10,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 WORKDIR /app
 COPY . .
 
-# Tell Python to look in /app/model_service when resolving imports
-ENV PYTHONPATH=/app/model_service
-
 # 3) Expose ports (8501 for Streamlit; 5000 is internal for Flask)
 ENV PORT=8501
 EXPOSE 8501 5000
