@@ -2,7 +2,8 @@ import streamlit as st
 from PIL import Image, ImageDraw
 import numpy as np
 import torch
-from model import MNIST_CNN
+- from model import MNIST_CNN
++ from model_service.model import MNIST_CN
 import io
 from datetime import datetime
 from sqlalchemy import create_engine, Table, Column, Integer, String, MetaData
